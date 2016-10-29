@@ -33,9 +33,9 @@ public class SurveyController {
     private WebContext webContext;
 
     @RequestMapping(value = "/community/surveys", method = RequestMethod.GET)
-    public List<Survey> getSurveys(@RequestBody @Valid Community community) {
+    public List<Survey> getSurveys(@RequestHeader Long communityID) {
 
-        return surveyRepository.findAllByCId(community.getPk_community());
+        return surveyRepository.findAllByCId(communityID);
     }
 
     @RequestMapping(value = "/community/survey", method = RequestMethod.POST)
