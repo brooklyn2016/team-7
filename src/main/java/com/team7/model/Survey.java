@@ -21,7 +21,8 @@ public class Survey {
 
     @NotNull
     @JsonProperty("community-id")
-    protected Long c_id;
+    @Column(name="c_id")
+    protected Long cId;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @OrderBy("s_id ASC")
@@ -31,6 +32,9 @@ public class Survey {
     @NotNull
     @JsonProperty("surveyor")
     protected String surveyor;
+
+    @JsonProperty("total-grade")
+    protected int totalGrade;
 
     @NotNull
     @JsonProperty("date-created")
@@ -42,16 +46,20 @@ public class Survey {
         return pid;
     }
 
-    public void setPid(Long pid) {
-        this.pid = pid;
+    public Long getcId() {
+        return cId;
     }
 
-    public Long getC_Id() {
-        return c_id;
+    public void setcId(Long cId) {
+        this.cId = cId;
     }
 
-    public void setC_Id(Long c_id) {
-        this.c_id = c_id;
+    public SortedSet<SurveyQuestionAnswer> getSurveyQuestionAnswers() {
+        return surveyQuestionAnswers;
+    }
+
+    public void setSurveyQuestionAnswers(SortedSet<SurveyQuestionAnswer> surveyQuestionAnswers) {
+        this.surveyQuestionAnswers = surveyQuestionAnswers;
     }
 
     public String getSurveyor() {
@@ -60,6 +68,14 @@ public class Survey {
 
     public void setSurveyor(String surveyor) {
         this.surveyor = surveyor;
+    }
+
+    public int getTotalGrade() {
+        return totalGrade;
+    }
+
+    public void setTotalGrade(int totalGrade) {
+        this.totalGrade = totalGrade;
     }
 
     public Date getDateCreated() {
