@@ -2,8 +2,7 @@ package com.team7.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -13,13 +12,16 @@ import javax.validation.constraints.NotNull;
 public class Question {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    protected Long pid;
+
     @NotNull
     @JsonProperty("number")
-    int number;
+    protected int number;
 
     @NotNull
     @JsonProperty("text")
-    String text;
+    protected String text;
 
 
     public int getNumber() {
