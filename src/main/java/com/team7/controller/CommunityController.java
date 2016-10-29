@@ -19,10 +19,10 @@ public class CommunityController {
     private CommunityRepository communityRepository;
 
     @RequestMapping(value = "/community", method = RequestMethod.GET)
-    public Community getCommunity(@RequestHeader(value = "region", required = false) String region,
-                                  @RequestHeader(value = "country") String country) {
+    public Community getCommunity(@RequestHeader(value = "country") String country,
+                                  @RequestHeader(value = "name") String name) {
 
-        return communityRepository.findOneByRegionAndCountry(region, country);
+        return communityRepository.findOneByNameAndCountry(name, country);
     }
 
     @RequestMapping(value = "/community", method = RequestMethod.POST)

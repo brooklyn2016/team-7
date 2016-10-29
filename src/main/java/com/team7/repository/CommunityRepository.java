@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Repository
 public interface CommunityRepository extends PagingAndSortingRepository<Community, String> {
-    public Community findOneByRegionAndCountry(String region, String country);
+    public Community findOneByNameAndCountry(String name, String country);
 
     @Query("select c from Community c where LOWER(TRIM(c.name)) like %:queryString% OR LOWER(TRIM(c.country)) like %:queryString% OR LOWER(TRIM(c.region)) like %:queryString%")
     public List<Community> findByQuery(@Param("queryString") String queryString);
