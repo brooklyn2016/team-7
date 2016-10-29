@@ -37,6 +37,13 @@ public class Statistics implements Comparable<Statistics> {
 
     private int yearQuarter;
 
+    public Statistics() {};
+
+    public Statistics(int year, int quarter, long c_id) {
+        setYear(year);
+        setQuarter(quarter);
+        setC_id(c_id);
+    }
 
     public void setPk_statistics(Long pk_statistics) {
         this.pk_statistics = pk_statistics;
