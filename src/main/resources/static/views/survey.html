@@ -1,21 +1,26 @@
+<<<<<<< HEAD
 <div class="surveyform" ng-controller="surveycontroller">
+=======
+<div class="surveyform" ng-controller="surveycontroller"> 
+<form class="col s12 surveyform" action="#">
+>>>>>>> Frontend_SurveyForm
 <div class="row">
       <div class="col s12 m12 l12">
         <div class="card">
           <div class="card-content black-text">
             <span class="card-title">Survey Form</span>
             <div class="row">
-              <form class="col s12">
+<!--              <form class="col s12">-->
                 <div class="row">
                   <div class="input-field col s12 m12 l12">
-                    <input id="org" type="text" class="validate">
+                    <input id="org" type="text" class="validate" ng-model="form.organization">
                     <label for="org">Organization</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="input-field col s6 m6 l6">
-                    <input id="village" type="text" class="validate">
+                    <input id="village" type="text" class="validate" ng-model="form.village">
                     <label for="village">Village/Settlement</label>
                   </div>
                   <div class="input-field col s6 m6 l6">
@@ -26,7 +31,7 @@
 
                 <div class="row">
                   <div class="input-field col s6 m6 l6">
-                    <input id="district" type="password" class="validate">
+                    <input id="district" type="text" class="validate">
                     <label for="district">District/Administrative area</label>
                   </div>
                   <div class="input-field col s6 m6 l6">
@@ -34,7 +39,7 @@
                     <label for="completion_date">Date of completion:</label>
                   </div>
                 </div>
-              </form>
+<!--              </form>-->
             </div>
           </div>
         </div>
@@ -48,23 +53,23 @@
           <div class="card-content black-text">
             <span class="card-title">Overall Achievement</span>
             <div class="row">
-              <form class="col s12" action="#">
+<!--              <form class="col s12" action="#">-->
                 <div class="row">
                   <div class="input-field col s6 m6 l6">
                     1. Traffickers, whether from the village or from outside the village, cannot operate any more.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="1c" />
+                    <input type="checkbox" id="1c" ng-model="form.c1"/>
                     <label for="1c">Completely true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="1p" />
+                    <input type="checkbox" id="1p" ng-model="form.p1"/>
                     <label for="1p">Partially true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="1u" />
+                    <input type="checkbox" id="1u" ng-model="form.u1"/>
                     <label for="1u">Completely untrue</label>
                   </div>
                 </div>
@@ -74,17 +79,17 @@
                     2. No one residing in this village is in any form of slavery.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="2c" />
+                    <input type="checkbox" id="2c" ng-model="form.c2"/>
                     <label for="2c">Completely true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="2p" />
+                    <input type="checkbox" id="2p" ng-model="form.p2"/>
                     <label for="2p">Partially true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="2u" />
+                    <input type="checkbox" id="2u" ng-model="form.u2"/>
                     <label for="2u">Completely untrue</label>
                   </div>
                 </div>
@@ -94,17 +99,17 @@
                     3. People who migrate from this community for work are NOT being trafficked.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="3c" />
+                    <input type="checkbox" id="3c" ng-model="form.c3"/>
                     <label for="3c">Completely true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="3p" />
+                    <input type="checkbox" id="3p" ng-model="form.p3"/>
                     <label for="3p">Partially true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="3u" />
+                    <input type="checkbox" id="3u" ng-model="form.u3"/>
                     <label for="3u">Completely untrue</label>
                   </div>
                 </div>
@@ -114,17 +119,17 @@
                     4. None of the children in this village are being exploited for commercial sex.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="4c" />
+                    <input type="checkbox" id="4c" ng-model="form.c4"/>
                     <label for="4c">Completely true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="4p" />
+                    <input type="checkbox" id="4p" ng-model="form.p4"/>
                     <label for="4p">Partially true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="4u" />
+                    <input type="checkbox" id="4u" ng-model="form.u4"/>
                     <label for="4u">Completely untrue</label>
                   </div>
                 </div>
@@ -134,21 +139,33 @@
                     5. None of the children in this village are performing hazardous labor.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="5c" />
+                    <input type="checkbox" id="5c" ng-model="form.c5"/>
                     <label for="5c">Completely true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="5p" />
+                    <input type="checkbox" id="5p" ng-model="form.p5"/>
                     <label for="5p">Partially true</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="5u" />
+                    <input type="checkbox" id="5u" ng-model="form.u5"/>
                     <label for="5u">Completely untrue</label>
                   </div>
+<<<<<<< HEAD
                 </div>
               </form>
+=======
+                  
+                  <div class="row">
+                    <div class="input-field col s6 m6 l6">
+                      <input id="scoreA" type="number" class="validate" ng-model="scoreA">
+                      <label for="scoreA">Score: </label>
+                    </div>
+                  </div>
+                </div>          
+<!--              </form>-->
+>>>>>>> Frontend_SurveyForm
             </div>
           </div>
 </div>
@@ -164,19 +181,21 @@
                     6. Residents in this village know how to protect themselves from trafficking during migration for work.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="6a" />
+                    <input type="checkbox" id="6a" ng-model="form.a6"/>
                     <label for="6a">All residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="6s" />
+                    <input type="checkbox" id="6s" ng-model="form.s6"/>
                     <label for="6s">Some residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="6n" />
+                    <input type="checkbox" id="6n" ng-model="form.n6"/>
                     <label for="6n">No residents</label>
                   </div>
+                  
+                  
                 </div>
 
                 <div class="row">
@@ -184,17 +203,17 @@
                     7. Residents understand the risks of sending children to distant jobs, e.g. domestic work, mining or stone quarries, and circuses.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="7a" />
+                    <input type="checkbox" id="7a" ng-model="form.a7"/>
                     <label for="7a">All residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="7s" />
+                    <input type="checkbox" id="7s" ng-model="form.s7"/>
                     <label for="7s">Some residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="7n" />
+                    <input type="checkbox" id="7n" ng-model="form.n7"/>
                     <label for="7n">No residents</label>
                   </div>
                 </div>
@@ -204,17 +223,17 @@
                     8. Residents are able to identify and pressure known traffickers to leave when they appear in the community.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="8a" />
+                    <input type="checkbox" id="8a" ng-model="form.a8"/>
                     <label for="8a">All residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="8s" />
+                    <input type="checkbox" id="8s" ng-model="form.s8"/>
                     <label for="8s">Some residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="8n" />
+                    <input type="checkbox" id="8n" ng-model="form.n8"/>
                     <label for="8n">No residents</label>
                   </div>
                 </div>
@@ -224,17 +243,17 @@
                     9. Residents in this village know how to avoid debt bondage.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="9a" />
+                    <input type="checkbox" id="9a" ng-model="form.a9"/>
                     <label for="9a">All residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="9s" />
+                    <input type="checkbox" id="9s" ng-model="form.s9"/>
                     <label for="9s">Some residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="9n" />
+                    <input type="checkbox" id="9n" ng-model="form.n9"/>
                     <label for="9n">No residents</label>
                   </div>
                 </div>
@@ -244,17 +263,17 @@
                     10. Residents understand the risks of early or forced marriage and false offers of marriage.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="10a" />
+                    <input type="checkbox" id="10a" ng-model="form.a10"/>
                     <label for="10a">All residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="10s" />
+                    <input type="checkbox" id="10s" ng-model="form.s10"/>
                     <label for="10s">Some residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="10n" />
+                    <input type="checkbox" id="10n" ng-model="form.n10"/>
                     <label for="10n">No residents</label>
                   </div>
                 </div>
@@ -264,17 +283,17 @@
                     11. Residents understand the risks of early or forced marriage and false offers of marriage.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="11a" />
+                    <input type="checkbox" id="11a" ng-model="form.a11"/>
                     <label for="11a">All residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="11s" />
+                    <input type="checkbox" id="11s" ng-model="form.s11"/>
                     <label for="11s">Some residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="11n" />
+                    <input type="checkbox" id="11n" ng-model="form.n11"/>
                     <label for="11n">No residents</label>
                   </div>
                 </div>
@@ -284,29 +303,49 @@
                     12. Residents are able to confront domestic violence.
                   </div>
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="12a" />
+                    <input type="checkbox" id="12a" ng-model="form.a12"/>
                     <label for="12a">All residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="12s" />
+                    <input type="checkbox" id="12s" ng-model="form.s12"/>
                     <label for="12s">Some residents</label>
                   </div>
 
                   <div class="input-field col s2 m2 l2">
-                    <input type="checkbox" id="12n" />
+                    <input type="checkbox" id="12n" ng-model="form.n12"/>
                     <label for="12n">No residents</label>
                   </div>
+<<<<<<< HEAD
                 </div>
 
                 <button class="btn waves-effect waves-light red center" id="submitform" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+=======
+                  
+                  <div class="row">
+                    <div class="input-field col s6 m6 l6">
+                      <input id="scoreB" type="number" class="validate">
+                      <label for="scoreB">Score: </label>
+                    </div>
+                  </div>
+                </div> 
+                
+                
+>>>>>>> Frontend_SurveyForm
               </form>
 
             </div>
 
           </div>
+<<<<<<< HEAD
 
+=======
+  
+       
+>>>>>>> Frontend_SurveyForm
 </div>
+  <button class="btn waves-effect waves-light red center" id="submitform" type="submit" name="action" ng-click="submitsurvey()">Submit<i class="material-icons right">send</i></button>
+  </form>
 </div>
 <script type="text/javascript">
 
