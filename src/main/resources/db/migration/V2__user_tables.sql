@@ -23,3 +23,7 @@ CREATE TABLE users_groups (
   CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users(id),
   CONSTRAINT fk_group_id FOREIGN KEY (group_id) REFERENCES groups(id)
 );
+
+INSERT INTO users(username, password, firstname, lastname, email) VALUES (
+'admin1', 'Password1', 'First1', 'Last2', 'admin1@fts.com'
+);

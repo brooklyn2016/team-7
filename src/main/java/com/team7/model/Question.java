@@ -13,23 +13,19 @@ public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected Long pid;
-
     @NotNull
-    @JsonProperty("number")
-    protected int number;
+    @JsonProperty("pk_question")
+    protected Long pk_question;
 
     @NotNull
     @JsonProperty("text")
     protected String text;
 
-
-    public int getNumber() {
-        return number;
+    public Question() {
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public Long getPkQuestion() {
+        return pk_question;
     }
 
     public String getText() {
@@ -47,14 +43,14 @@ public class Question {
 
         Question question = (Question) o;
 
-        if (number != question.number) return false;
+        if (!pk_question.equals(question.pk_question)) return false;
         return text.equals(question.text);
 
     }
 
     @Override
     public int hashCode() {
-        int result = number;
+        int result = pk_question.hashCode();
         result = 31 * result + text.hashCode();
         return result;
     }
