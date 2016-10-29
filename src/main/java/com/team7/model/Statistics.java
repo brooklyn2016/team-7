@@ -29,7 +29,8 @@ public class Statistics implements Comparable<Statistics> {
 
     @NotNull
     @JsonProperty("community-id")
-    protected Long c_id;
+    @Column(name="c_id")
+    protected Long cId;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @JsonProperty("stat-vals")
@@ -42,7 +43,7 @@ public class Statistics implements Comparable<Statistics> {
     public Statistics(int year, int quarter, long c_id) {
         setYear(year);
         setQuarter(quarter);
-        setC_id(c_id);
+        setcId(c_id);
     }
 
     public void setPk_statistics(Long pk_statistics) {
@@ -87,12 +88,12 @@ public class Statistics implements Comparable<Statistics> {
         yearQuarter = year * 100 + quarter;
     }
 
-    public Long getC_id() {
-        return c_id;
+    public Long getcId() {
+        return cId;
     }
 
-    public void setC_id(Long c_id) {
-        this.c_id = c_id;
+    public void setcId(Long cId) {
+        this.cId = cId;
     }
 
     @Override
@@ -106,7 +107,7 @@ public class Statistics implements Comparable<Statistics> {
                 "pk_statistics=" + pk_statistics +
                 ", year=" + year +
                 ", quarter=" + quarter +
-                ", c_id=" + c_id +
+                ", c_id=" + cId +
                 ", statVals=" + statVals +
                 ", yearQuarter=" + yearQuarter +
                 '}';
