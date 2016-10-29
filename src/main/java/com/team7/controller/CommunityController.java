@@ -19,10 +19,16 @@ public class CommunityController {
     private CommunityRepository communityRepository;
 
     @RequestMapping(value = "/community", method = RequestMethod.GET)
-    public Community getCommunity(@RequestHeader(value = "country") String country,
+    public ResponseEntity<Community> getCommunity(@RequestHeader(value = "country") String country,
                                   @RequestHeader(value = "name") String name) {
 
-        return communityRepository.findOneByNameAndCountry(name, country);
+        Community community = communityRepository.findOneByNameAndCountry(name, country);
+
+        if(community == null) {
+            return new ResponseEntity<Community>((Community)null, HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<Community>(community, HttpStatus.CREATED);
+        }
     }
 
     @RequestMapping(value = "/community", method = RequestMethod.POST)
