@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by jbeckman on 10/28/16.
  */
-@Embeddable
+@Entity
 public class Question {
 
     @Id

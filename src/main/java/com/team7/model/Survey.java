@@ -21,7 +21,8 @@ public class Survey {
     protected Long pid;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @JsonProperty("survey-question-answer") @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    @OrderBy("s_id ASC")
+    @JsonProperty("survey-question-answers") @JsonInclude(JsonInclude.Include.NON_EMPTY)
     protected SortedSet<SurveyQuestionAnswer> surveyQuestionAnswers = new TreeSet<>();
 
     @NotNull
