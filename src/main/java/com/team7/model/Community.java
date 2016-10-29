@@ -22,9 +22,14 @@ public class Community {
     @JsonProperty("country")
     protected String country;
 
-    public Community(String region, String country) {
+    @NotNull
+    @JsonProperty("name")
+    protected String name;
+
+    public Community(String region, String country, String name) {
         this.region = region;
         this.country = country;
+        this.name = name;
     }
 
     public Long getPk_community() {
@@ -51,6 +56,14 @@ public class Community {
         this.country = country;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -58,17 +71,20 @@ public class Community {
 
         Community community = (Community) o;
 
-        if (!pk_community.equals(community.pk_community)) return false;
+        if (pk_community != null ? !pk_community.equals(community.pk_community) : community.pk_community != null)
+            return false;
         if (region != null ? !region.equals(community.region) : community.region != null) return false;
-        return country.equals(community.country);
+        if (!country.equals(community.country)) return false;
+        return name.equals(community.name);
 
     }
 
     @Override
     public int hashCode() {
-        int result = pk_community.hashCode();
+        int result = pk_community != null ? pk_community.hashCode() : 0;
         result = 31 * result + (region != null ? region.hashCode() : 0);
         result = 31 * result + country.hashCode();
+        result = 31 * result + name.hashCode();
         return result;
     }
 }
