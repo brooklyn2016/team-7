@@ -4,12 +4,51 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
         <meta content="utf-8" http-equiv="encoding"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>   
-<!--
-         uncomment to open all other links in a new window
-        <base target="_blank">
--->
+      
+<!-- uncomment to open all other links in a new window <base target="_blank">    --> 
+<!--     Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">      
+
+<!--      Google Icons-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--      Default CSS file-->
+        <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+        
         <title>Free the Slaves!</title>
     </head>
   <body>
+    
+<!--  Navigation-->
+  <nav class="text-black">
+    <div class="nav-wrapper indigo black-text">
+      <a href="#" class="brand-logo">FreeTheSlaves</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Survey</a></li>
+        <li><a href="#">Data Graphs</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+    
+    
+    <!--jQuery-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <!--Angular-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
+    
+    <!--Materialize-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    
+    <script type="text/javascript">
+      
+      //Navigation
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+      })
+      
+    
+    </script>
   </body>
 </html>
