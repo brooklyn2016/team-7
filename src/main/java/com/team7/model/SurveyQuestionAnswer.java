@@ -29,7 +29,14 @@ public class SurveyQuestionAnswer implements Comparable<SurveyQuestionAnswer> {
     @JsonProperty("answer")
     protected String answer;
 
-    public SurveyQuestionAnswer() {
+    public SurveyQuestionAnswer() {}
+
+    public SurveyQuestionAnswer(Long s_id, Long q_id, String section, int sectionGrade, String answer) {
+        this.s_id = s_id;
+        this.q_id = q_id;
+        this.section = section;
+        this.sectionGrade = sectionGrade;
+        this.answer = answer;
     }
 
     public Long getS_id() {
