@@ -15,11 +15,11 @@ ftsapp.config(['$routeProvider', function($routeProvider) {
     .when('/survey', {
         templateUrl: 'views/survey.html',
         controller: 'surveycontroller'
-    });// route for the charts page
-//    .when('/login', {
-//        templateUrl: 'views/login.html',
-//        controller: 'lineController',
-//    
-//    });
+    })// route for the charts page
+    .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'logincontroller',
+    
+    });
 }
 ]);
