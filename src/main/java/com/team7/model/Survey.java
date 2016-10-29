@@ -42,6 +42,16 @@ public class Survey {
     @Temporal(TemporalType.TIMESTAMP)
     protected Date dateCreated;
 
+    public Survey(){}
+
+    public Survey(Long cId, TreeSet<SurveyQuestionAnswer> SQAs, String surveyor, int totalGrade) {
+        this.cId = cId;
+        this.surveyQuestionAnswers = SQAs;
+        this.surveyor = surveyor;
+        this.totalGrade = totalGrade;
+        this.dateCreated = new Date();
+    }
+
     public Long getPid() {
         return pid;
     }
