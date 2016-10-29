@@ -17,7 +17,7 @@ import java.util.TreeSet;
 public class Survey {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected Long pid;
+    protected Long s_id;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @OrderBy("s_id ASC")
@@ -34,12 +34,12 @@ public class Survey {
     @Temporal(TemporalType.TIMESTAMP)
     protected Date dateCreated;
 
-    public Long getPid() {
-        return pid;
+    public Long getS_id() {
+        return s_id;
     }
 
-    public void setPid(Long pid) {
-        this.pid = pid;
+    public void setS_id(Long s_id) {
+        this.s_id = s_id;
     }
 
     public String getSurveyor() {
@@ -65,7 +65,7 @@ public class Survey {
 
         Survey survey = (Survey) o;
 
-        if (pid != null ? !pid.equals(survey.pid) : survey.pid != null) return false;
+        if (s_id != null ? !s_id.equals(survey.s_id) : survey.s_id != null) return false;
         if (!surveyor.equals(survey.surveyor)) return false;
         return dateCreated.equals(survey.dateCreated);
 
@@ -73,7 +73,7 @@ public class Survey {
 
     @Override
     public int hashCode() {
-        int result = pid != null ? pid.hashCode() : 0;
+        int result = s_id != null ? s_id.hashCode() : 0;
         result = 31 * result + surveyor.hashCode();
         result = 31 * result + dateCreated.hashCode();
         return result;

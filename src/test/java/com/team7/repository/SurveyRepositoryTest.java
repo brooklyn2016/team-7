@@ -9,12 +9,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 import java.util.stream.StreamSupport;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 
 /**
  * Created by jbeckman on 10/28/16.
