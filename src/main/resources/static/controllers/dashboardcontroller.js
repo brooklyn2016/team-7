@@ -59,6 +59,8 @@ angular.module('ftssurvey').controller('dashboardcontroller', ['$scope','$rootSc
   }
   
   $scope.showpie = function() {
+    
+    console.log("it's here");
     var piesettings = {
          "async": true,
          "crossDomain": true,
