@@ -28,9 +28,10 @@ public class CommunityController {
 
     @RequestMapping(value = "/community", method = RequestMethod.POST)
     public ResponseEntity<Community> setCommunity(@RequestHeader(value = "region", required = false) String region,
-                                                  @RequestHeader(value = "country", required = false) String country) {
+                                                  @RequestHeader(value = "country", required = false) String country,
+                                                  @RequestHeader(value = "name", required = false) String name) {
 
-        Community community = communityRepository.save(new Community(region, country));
+        Community community = communityRepository.save(new Community(region, country, name));
 
         if(community == null) {
             return new ResponseEntity<Community>((Community)null, HttpStatus.BAD_REQUEST);
