@@ -26,6 +26,8 @@ public class Community {
     @JsonProperty("name")
     protected String name;
 
+    public Community() {};
+
     public Community(String region, String country, String name) {
         this.region = region;
         this.country = country;
