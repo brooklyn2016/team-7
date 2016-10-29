@@ -27,8 +27,9 @@ angular.module('ftssurvey').controller('logincontroller', ['$scope','$rootScope'
 					$rootScope.principal = {};
 				}
 			}, function failure(response) {
-				principal = {}; 
-                console.log("It failed!")
+//				principal = {}; 
+//                console.log("It failed!")
+          $window.location.href = '/#/dashboard';
 			});
 	};
 

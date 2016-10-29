@@ -178,3 +178,8 @@ table {
 #orgs {
   display: block;
 }
+
+.slice text {
+font-size: 16pt;
+font-family: Arial;
+} 

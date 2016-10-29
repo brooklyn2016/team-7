@@ -30,7 +30,6 @@ angular.module('ftssurvey').controller('dashboardcontroller', ['$scope','$rootSc
            "name": commname
           }
          };
-
       
         $.ajax(settings).done(function (response) {
           console.log(response);
@@ -40,9 +39,7 @@ angular.module('ftssurvey').controller('dashboardcontroller', ['$scope','$rootSc
         
          
     $('#addcomm').closeModal();
-  
-  
-          
+   
       }
     else {
       document.getElementById("countrycheck").innerHTML = "This field cannot be empty!"
@@ -73,7 +70,9 @@ angular.module('ftssurvey').controller('dashboardcontroller', ['$scope','$rootSc
           console.log(response);
         });
     
-    document.getElementById("orgs").style.display = "none";
+//    document.getElementById("orgs").style.display = "none";
+//    document.getElementById("orgs").style.display = "none";
+    
   }
 
 }]);

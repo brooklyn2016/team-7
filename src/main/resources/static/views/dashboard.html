@@ -1,7 +1,7 @@
 <div class="dashboard" ng-controller="dashboardcontroller">
 
   <div class="row">
-    <div class="col s12 m4 l4">
+    <div class="col s12 m6 l6">
       <div class="card">
         <div class="card-content">
           <span class="card-title">Communities</span>
@@ -52,21 +52,37 @@
       </div>
     </div>
     
-    <div class="col s12 m4 l4" id="stats" ng-show="showContents">
+    <div class="col s12 m6 l6" id="stats" ng-show="showContents">
       <div class="card">
         <div class="card-content">
           <span class="card-title">Statistics</span>
         </div>
         <div class="card-action">
+          <div class="questions-select">
+            <label for="questions">Benchmark : </label>
+            <select class="questions" name="questions" id="questions">
+              <option value="Slaves freed">1: Slaves Freed </option>
+              <option value="Slaves effectively re-intergrated">2: Slaves effectively reintegrated</option>
+              <option value="Communities that have reached full maturity">3: Communities that have reached full maturity</option>
+              <option value="Community Members educated on rights and risks">4: Community members educated in rights and risks</option>
+              <option value="Communities receiving support">5: Communities receiving support</option>
+
+            </select>
+
+<!--       <button  onclick="filter_pie()">Filter, D3!</button>-->
+            <button class="btn red"><i class="material-icons right" onclick="filter_pie()">search</i>Select</button>
+            <button class="btn modal-trigger red"><i class="material-icons right">add</i>Add</button>
+    </div>
           
-          <button class="btn red"><i class="material-icons right" ng-click="showpie()">search</i>Select</button>
-          <button class="btn modal-trigger red"><i class="material-icons right">add</i>Add</button>
+<!--          <button class="btn red"><i class="material-icons right" ng-click="showpie()">search</i>Select</button>-->
+          
           
 
         </div>
       </div>
     </div>
     
+<!--
     <div class="col s12 m4 l4" id="survey" ng-show="showContents">
       <div class="card">
         <div class="card-content">
@@ -76,13 +92,12 @@
           
           <button class="btn red"><i class="material-icons right">search</i>Select</button>
           <button class="btn modal-trigger red"><i class="material-icons right">add</i>Add</button>
-<!--
           <a class="waves-effect waves-light btn-small white black-text"><i class="material-icons left">search</i>Search</a>
           <a class="waves-effect waves-light btn-small white black-text right"><i class="material-icons right">add</i>add</a>
--->
         </div>
       </div>
     </div>
+-->
   </div>
   
   <!--  Search bar-->
@@ -94,9 +109,13 @@
   </div>
 -->
   
-  <div class="Stats" id="pie_div">
   
+  
+  <div class="Stats" class="pie_div" ng-show="showContents">
+    <div class="pie_div"></div>
   </div>
+  
+  
   
   <div class="Organizations" id="orgs">
     <table>
@@ -140,6 +159,9 @@
 </div>
 <script type="text/javascript" src="js/radialProgressLibrary.js"></script>
 <script type="text/javascript" src="js/radial.js"></script>
+ <script type="text/javascript" src="js/pie.js"></script>
+<!--<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>-->
+ <script src="js/d3.min.js" charset="utf-8"></script>
 <script type="text/javascript">
   
   $( document ).ready(function(){
