@@ -33,6 +33,10 @@ public class Survey {
     @JsonProperty("surveyor")
     protected String surveyor;
 
+    @NotNull
+    @JsonProperty("organization")
+    protected String organization;
+
     @JsonProperty("total-grade")
     protected int totalGrade;
 
@@ -44,10 +48,11 @@ public class Survey {
 
     public Survey(){}
 
-    public Survey(Long cId, TreeSet<SurveyQuestionAnswer> SQAs, String surveyor, int totalGrade) {
+    public Survey(Long cId, TreeSet<SurveyQuestionAnswer> SQAs, String surveyor, String organization, int totalGrade) {
         this.cId = cId;
         this.surveyQuestionAnswers = SQAs;
         this.surveyor = surveyor;
+        this.organization = organization;
         this.totalGrade = totalGrade;
         this.dateCreated = new Date();
     }
@@ -78,6 +83,14 @@ public class Survey {
 
     public void setSurveyor(String surveyor) {
         this.surveyor = surveyor;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
     }
 
     public int getTotalGrade() {

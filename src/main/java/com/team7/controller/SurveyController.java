@@ -40,16 +40,21 @@ public class SurveyController {
 
     @RequestMapping(value = "/community/survey", method = RequestMethod.POST)
     public ResponseEntity<Survey> createSurvey(@RequestHeader(value = "communityId") Long communityId,
-                                               @RequestHeader(value = "surveyor") String surveyor,
                                                @RequestHeader(value = "totalGrade") int totalGrade,
+                                               @RequestHeader(value = "organization") String organization,
                                                @RequestBody @Valid List<SurveyQuestionAnswer> surveyQuestionAnswers) {
 
         User user = userRepository.findByUsername(webContext.getUsername());
-        if(user == null) {
+        if(user == null || surveyQuestionAnswers.size() == 0) {
             return new ResponseEntity<Survey>((Survey)null, HttpStatus.BAD_REQUEST);
         }
 
-        Survey savedSurvey = surveyRepository.save(new Survey(communityId, new TreeSet(surveyQuestionAnswers), surveyor, totalGrade));
+        Survey savedSurvey = surveyRepository.save(new Survey(communityId,
+                new TreeSet(surveyQuestionAnswers),
+                webContext.getUsername(),
+                organization,
+                totalGrade
+        ));
 
         if(savedSurvey == null) {
             return new ResponseEntity<Survey>((Survey)null, HttpStatus.BAD_REQUEST);
