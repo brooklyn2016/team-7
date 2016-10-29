@@ -20,24 +20,28 @@
     
 <!--  Navigation-->   
   <nav>
-    <div class="nav-wrapper indigo black-text">
+    <div class="nav-wrapper indigo black-text" ng-controller="homecontroller">
       <a href="#!" class="brand-logo">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#survey">Survey</a></li>
-        <li><a href="#datagrpahs">Data Graphs</a></li>
+        <li><a href="#home" >Home</a></li>
+        <li><a href="#survey" id="hidewocred">Survey</a></li>
+        <li><a href="#datagrpahs" class="hidewocred">Data Graphs</a></li>
         <li><a href="#login">Login</a></li>
+        <li><a href="#dashboard"class="hidewocred">Dashboard</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="#survey">Survey</a></li>
-        <li><a href="#datagraphs">Data Graphs</a></li>
-        <li><a href="#login">Login</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#survey" class="hidewocred" onclick="hidenav()">Survey</a></li>
+        <li><a href="#datagraphs" class="hidewocred" onclick="hidenav()">Data Graphs</a></li>
+        <li><a href="#login" onclick="hidenav()">Login</a></li>
+        <li><a href="#dashboard" class="hidewocred" onclick="hidenav()">Dashboard</a></li>
       </ul>
     </div>
   </nav>
     
 <!-- Form-->
-        <!--    injecting all the forms data-->
+    <!--injecting all the forms data-->
     <div ng-view></div>
 
     <!--jQuery-->
@@ -53,17 +57,25 @@
     <!--Materialize-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     
-    <script type="text/javascript">
-  
-      $( document ).ready(function(){
-        
-      });
-
-    </script>
+   
     
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="controllers/homecontroller.js"></script>
     <script type="text/javascript" src="controllers/surveycontroller.js"></script>
     <script type="text/javascript" src="controllers/logincontroller.js"></script>
+    <script type="text/javascript" src="controllers/dashboardcontroller.js"></script>
+     <script type="text/javascript">
+  
+      $( document ).ready(function(){
+         $(".button-collapse").sideNav();
+      });
+      
+      function hidenav()
+      {
+        $('.button-collapse').sideNav('hide');
+      }
+
+    </script>
     
   </body>
 </html>
