@@ -3,7 +3,7 @@ angular.module('ftssurvey').controller('dashboardcontroller', ['$scope','$rootSc
    var commname; 
     var commcountry; 
     var commregion, optionvalue; 
-  
+  $scope.showContents = false; 
   var headers = {name: commname, region: commregion, country: commcountry};
     
  
@@ -54,10 +54,10 @@ angular.module('ftssurvey').controller('dashboardcontroller', ['$scope','$rootSc
   
   $scope.showcomponents = function() {
     
-    document.getElementById("stats").style.display = "block";
-    document.getElementById("survey").style.display = "block";
+    $scope.showContents=true;  
   }
   
+  //need to hide radials
   $scope.showpie = function() {
     
     console.log("it's here");
@@ -73,6 +73,7 @@ angular.module('ftssurvey').controller('dashboardcontroller', ['$scope','$rootSc
           console.log(response);
         });
     
+    document.getElementById("orgs").style.display = "none";
   }
 
 }]);

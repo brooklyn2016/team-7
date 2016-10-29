@@ -163,10 +163,18 @@ table {
   text-anchor: middle;
 }
 
+/*
 #stats {
   display: none;
 }
+*/
 
+/*
 #survey {
   display: none;
+}
+*/
+
+#orgs {
+  display: block;
 }

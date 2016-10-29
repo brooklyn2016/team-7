@@ -1,5 +1,5 @@
 <div class="dashboard" ng-controller="dashboardcontroller">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
   <div class="row">
     <div class="col s12 m4 l4">
       <div class="card">
@@ -8,10 +8,12 @@
 
         </div>
         <div class="card-action"> 
+<!--
           <div class="input-field col s12">
             <input id="search" aria-label= "Search Bar" type="text" placeholder="Search" autofocus />
           </div>
-          <button class="btn red"><i class="material-icons right" ng-click="showcomponents()">search</i>Search</button>
+-->
+          <button class="btn red"><i class="material-icons right" ng-click="showcomponents()">search</i>Select</button>
           <button data-target="addcomm" class="btn modal-trigger red" onclick="closemodal()"><i class="material-icons right">add</i>Add</button>
 
           <div id="addcomm" class="modal">
@@ -50,7 +52,7 @@
       </div>
     </div>
     
-    <div class="col s12 m4 l4" id="stats">
+    <div class="col s12 m4 l4" id="stats" ng-show="showContents">
       <div class="card">
         <div class="card-content">
           <span class="card-title">Statistics</span>
@@ -65,7 +67,7 @@
       </div>
     </div>
     
-    <div class="col s12 m4 l4" id="survey">
+    <div class="col s12 m4 l4" id="survey" ng-show="showContents">
       <div class="card">
         <div class="card-content">
           <span class="card-title">Survey</span>
@@ -96,7 +98,7 @@
   
   </div>
   
-  <div class="Organizations">
+  <div class="Organizations" id="orgs">
     <table>
         <thead>
           <tr>
@@ -140,16 +142,13 @@
 <script type="text/javascript" src="js/radial.js"></script>
 <script type="text/javascript">
   
-    $( document ).ready(function(){
-      //Navigation
-      $(".button-collapse").sideNav();
-      $('select').material_select();
-      $('.modal-trigger').leanModal();
+  $( document ).ready(function(){
+    //Navigation
+    $(".button-collapse").sideNav();
+    $('select').material_select();
+    $('.modal-trigger').leanModal();
 
-    });
-  
+  });
  
-
-  
   
 </script>
