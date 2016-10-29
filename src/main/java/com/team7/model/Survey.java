@@ -19,6 +19,10 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long pid;
 
+    @NotNull
+    @JsonProperty("community-id")
+    protected Long c_id;
+
     @ElementCollection(fetch = FetchType.EAGER)
     @OrderBy("s_id ASC")
     @JsonProperty("survey-question-answers") @JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -40,6 +44,14 @@ public class Survey {
 
     public void setPid(Long pid) {
         this.pid = pid;
+    }
+
+    public Long getC_Id() {
+        return c_id;
+    }
+
+    public void setC_Id(Long c_id) {
+        this.c_id = c_id;
     }
 
     public String getSurveyor() {
