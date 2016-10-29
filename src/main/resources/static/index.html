@@ -18,17 +18,61 @@
     </head>
   <body>
     
-<!--  Navigation-->
-  <nav class="text-black">
+<!--  Navigation-->   
+  <nav>
     <div class="nav-wrapper indigo black-text">
-      <a href="#" class="brand-logo">FreeTheSlaves</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Survey</a></li>
+        <li><a href="#">Data Graphs</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
         <li><a href="#">Survey</a></li>
         <li><a href="#">Data Graphs</a></li>
         <li><a href="#">Login</a></li>
       </ul>
     </div>
   </nav>
+    
+<!-- Form-->
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <div class="card">
+          <div class="card-content black-text">
+            <span class="card-title">Card Title</span>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="village" type="text" class="validate">
+                    <label for="village">Village/Settlement</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="village_population" type="text" class="validate">
+                    <label for="village_population">Estimated Population of village</label>
+                  </div>
+                </div>
+               
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">District/Administrative area</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     
     <!--jQuery-->
@@ -38,6 +82,9 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
     
+    <!-- D3.JS-->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js"></script>
+  
     <!--Materialize-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     
