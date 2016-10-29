@@ -15,7 +15,6 @@ import java.util.TreeSet;
  */
 @Entity
 public class Survey {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long pid;
@@ -47,7 +46,7 @@ public class Survey {
         return surveyor;
     }
 
-    public void setSurvey0r(String surveyor) {
+    public void setSurveyor(String surveyor) {
         this.surveyor = surveyor;
     }
 
