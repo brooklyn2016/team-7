@@ -21,7 +21,8 @@ public class Survey {
 
     @NotNull
     @JsonProperty("community-id")
-    protected Long c_id;
+    @Column(name="c_id")
+    protected Long cId;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @OrderBy("s_id ASC")
@@ -33,25 +34,47 @@ public class Survey {
     protected String surveyor;
 
     @NotNull
+    @JsonProperty("organization")
+    protected String organization;
+
+    @JsonProperty("total-grade")
+    protected int totalGrade;
+
+    @NotNull
     @JsonProperty("date-created")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSSZ", timezone="UTC")
     @Temporal(TemporalType.TIMESTAMP)
     protected Date dateCreated;
 
+    public Survey(){}
+
+    public Survey(Long cId, TreeSet<SurveyQuestionAnswer> SQAs, String surveyor, String organization, int totalGrade) {
+        this.cId = cId;
+        this.surveyQuestionAnswers = SQAs;
+        this.surveyor = surveyor;
+        this.organization = organization;
+        this.totalGrade = totalGrade;
+        this.dateCreated = new Date();
+    }
+
     public Long getPid() {
         return pid;
     }
 
-    public void setPid(Long pid) {
-        this.pid = pid;
+    public Long getcId() {
+        return cId;
     }
 
-    public Long getC_Id() {
-        return c_id;
+    public void setcId(Long cId) {
+        this.cId = cId;
     }
 
-    public void setC_Id(Long c_id) {
-        this.c_id = c_id;
+    public SortedSet<SurveyQuestionAnswer> getSurveyQuestionAnswers() {
+        return surveyQuestionAnswers;
+    }
+
+    public void setSurveyQuestionAnswers(SortedSet<SurveyQuestionAnswer> surveyQuestionAnswers) {
+        this.surveyQuestionAnswers = surveyQuestionAnswers;
     }
 
     public String getSurveyor() {
@@ -60,6 +83,22 @@ public class Survey {
 
     public void setSurveyor(String surveyor) {
         this.surveyor = surveyor;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
+    }
+
+    public int getTotalGrade() {
+        return totalGrade;
+    }
+
+    public void setTotalGrade(int totalGrade) {
+        this.totalGrade = totalGrade;
     }
 
     public Date getDateCreated() {
