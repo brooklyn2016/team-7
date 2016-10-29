@@ -42,20 +42,12 @@ public class Statistics implements Comparable<Statistics> {
         this.pk_statistics = pk_statistics;
     }
 
-    public void setC_id(Long c_id) {
-        this.c_id = c_id;
-    }
-
     public List<StatValTuple> getStatVals() {
         return statVals;
     }
 
-    public long getPk_statistics() {
+    public Long getPk_statistics() {
         return pk_statistics;
-    }
-
-    public void setPk_statistics(long pk_statistics) {
-        this.pk_statistics = pk_statistics;
     }
 
     public int getYear() {
@@ -84,11 +76,11 @@ public class Statistics implements Comparable<Statistics> {
         yearQuarter = year * 100 + quarter;
     }
 
-    public long getC_id() {
+    public Long getC_id() {
         return c_id;
     }
 
-    public void setC_id(long c_id) {
+    public void setC_id(Long c_id) {
         this.c_id = c_id;
     }
 

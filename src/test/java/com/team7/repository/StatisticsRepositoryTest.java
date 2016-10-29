@@ -1,5 +1,6 @@
 package com.team7.repository;
 
+import com.team7.model.StatValTuple;
 import com.team7.model.Statistics;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,6 +38,7 @@ public class StatisticsRepositoryTest {
 
         Statistics stat = new Statistics();
         stat.setYearQuarter(2016, 2);
+        stat.setC_id(new Long(2));
         statisticsRepository.save(stat);
 
         long countAfter = StreamSupport.stream(statisticsRepository.findAll().spliterator(), false).count();
@@ -50,14 +52,17 @@ public class StatisticsRepositoryTest {
 
         Statistics stat1 = new Statistics();
         stat1.setYearQuarter(2016, 2);
+        stat1.setC_id(new Long(2));
         statisticsRepository.save(stat1);
 
         Statistics stat2 = new Statistics();
         stat2.setYearQuarter(2016, 3);
+        stat2.setC_id(new Long(3));
         statisticsRepository.save(stat2);
 
         Statistics stat3 = new Statistics();
         stat3.setYearQuarter(2016, 3);
+        stat3.setC_id(new Long(5));
         statisticsRepository.save(stat3);
 
         long countAfter = StreamSupport.stream(statisticsRepository.findAll().spliterator(), false).count();
@@ -71,6 +76,7 @@ public class StatisticsRepositoryTest {
 
         Statistics stat1 = new Statistics();
         stat1.setYearQuarter(2016, 2);
+        stat1.setC_id(new Long(2));
         statisticsRepository.save(stat1);
 
         for (Statistics s : statisticsRepository.findAll()) {
@@ -105,9 +111,14 @@ public class StatisticsRepositoryTest {
 //
 //        Statistics stat1 = new Statistics();
 //        stat1.setYearQuarter(2016, 2);
-//        stat1.addStatVal("deaths", 2);
-//        stat1.addStatVal("saves", 4);
+//        stat1.setC_id(new Long(2));
 //        statisticsRepository.save(stat1);
+//
+//        StatValTuple svt = new StatValTuple();
+//        svt.setPk_statistics(new Long(3));
+//        svt.setStat("death");
+//        svt.setVal(new Double(2));
+//
 //    }
 
 }
