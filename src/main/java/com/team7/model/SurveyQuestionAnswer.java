@@ -19,6 +19,13 @@ public class SurveyQuestionAnswer implements Comparable<SurveyQuestionAnswer> {
     @JsonProperty("question-id")
     protected Long q_id;
 
+    @NotNull
+    @JsonProperty("section")
+    protected String section;
+
+    @JsonProperty("section-grade")
+    protected int sectionGrade;
+
     @JsonProperty("answer")
     protected String answer;
 
@@ -69,16 +76,20 @@ public class SurveyQuestionAnswer implements Comparable<SurveyQuestionAnswer> {
 
         SurveyQuestionAnswer that = (SurveyQuestionAnswer) o;
 
-        if (s_id != null ? !s_id.equals(that.s_id) : that.s_id != null) return false;
-        if (q_id != null ? !q_id.equals(that.q_id) : that.q_id != null) return false;
+        if (sectionGrade != that.sectionGrade) return false;
+        if (!s_id.equals(that.s_id)) return false;
+        if (!q_id.equals(that.q_id)) return false;
+        if (!section.equals(that.section)) return false;
         return answer != null ? answer.equals(that.answer) : that.answer == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = s_id != null ? s_id.hashCode() : 0;
-        result = 31 * result + (q_id != null ? q_id.hashCode() : 0);
+        int result = s_id.hashCode();
+        result = 31 * result + q_id.hashCode();
+        result = 31 * result + section.hashCode();
+        result = 31 * result + sectionGrade;
         result = 31 * result + (answer != null ? answer.hashCode() : 0);
         return result;
     }
