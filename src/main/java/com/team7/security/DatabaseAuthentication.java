@@ -19,15 +19,9 @@ public class DatabaseAuthentication extends GlobalAuthenticationConfigurerAdapte
     @Autowired
     UserDetailsService userDetailsService;
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userDetailsService);
     }
 
 }
