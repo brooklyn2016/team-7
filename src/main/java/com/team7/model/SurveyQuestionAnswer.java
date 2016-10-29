@@ -29,6 +29,9 @@ public class SurveyQuestionAnswer implements Comparable<SurveyQuestionAnswer> {
     @JsonProperty("answer")
     protected String answer;
 
+    public SurveyQuestionAnswer() {
+    }
+
     public Long getS_id() {
         return s_id;
     }

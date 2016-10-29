@@ -21,6 +21,8 @@ public class Question {
     @JsonProperty("text")
     protected String text;
 
+    public Question() {
+    }
 
     public Long getPkQuestion() {
         return pk_question;
