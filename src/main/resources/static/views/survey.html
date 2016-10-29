@@ -1,0 +1,318 @@
+<div class="row">
+      <div class="col s12 m12 l12">
+        <div class="card">
+          <div class="card-content black-text">
+            <span class="card-title">Survey Form</span>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12 m12 l12">
+                    <input id="org" type="text" class="validate">
+                    <label for="org">Organization</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    <input id="village" type="text" class="validate">
+                    <label for="village">Village/Settlement</label>
+                  </div>
+                  <div class="input-field col s6 m6 l6">
+                    <input id="village_population" type="number" class="validate">
+                    <label for="village_population">Estimated Population of village</label>
+                  </div>
+                </div>
+               
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    <input id="district" type="password" class="validate">
+                    <label for="district">District/Administrative area</label>
+                  </div>
+                  <div class="input-field col s6 m6 l6">
+                    <input id="completion_date" type="date" class="datepicker">
+                    <label for="completion_date">Date of completion:</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+     
+    
+      </div>
+    </div>
+
+<!--Section A-->
+<div class="card">
+          <div class="card-content black-text">
+            <span class="card-title">Overall Achievement</span>
+            <div class="row">
+              <form class="col s12" action="#">
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    1. Traffickers, whether from the village or from outside the village, cannot operate any more.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="1c" />
+                    <label for="1c">Completely true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="1p" />
+                    <label for="1p">Partially true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="1u" />
+                    <label for="1u">Completely untrue</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    2. No one residing in this village is in any form of slavery.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="2c" />
+                    <label for="2c">Completely true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="2p" />
+                    <label for="2p">Partially true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="2u" />
+                    <label for="2u">Completely untrue</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    3. People who migrate from this community for work are NOT being trafficked.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="3c" />
+                    <label for="3c">Completely true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="3p" />
+                    <label for="3p">Partially true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="3u" />
+                    <label for="3u">Completely untrue</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    4. None of the children in this village are being exploited for commercial sex.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="4c" />
+                    <label for="4c">Completely true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="4p" />
+                    <label for="4p">Partially true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="4u" />
+                    <label for="4u">Completely untrue</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    5. None of the children in this village are performing hazardous labor.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="5c" />
+                    <label for="5c">Completely true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="5p" />
+                    <label for="5p">Partially true</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="5u" />
+                    <label for="5u">Completely untrue</label>
+                  </div>
+                </div>          
+              </form>
+            </div>
+          </div>
+</div>
+
+<!--Section B-->
+<div class="card" ng-controller="surveycontroller">
+          <div class="card-content black-text">
+            <span class="card-title">Trafficking and slavery public awareness:</span>
+            <div class="row">
+              <form class="col s12" action="#">
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    6. Residents in this village know how to protect themselves from trafficking during migration for work.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="6a" />
+                    <label for="6a">All residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="6s" />
+                    <label for="6s">Some residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="6n" />
+                    <label for="6n">No residents</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    7. Residents understand the risks of sending children to distant jobs, e.g. domestic work, mining or stone quarries, and circuses.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="7a" />
+                    <label for="7a">All residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="7s" />
+                    <label for="7s">Some residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="7n" />
+                    <label for="7n">No residents</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    8. Residents are able to identify and pressure known traffickers to leave when they appear in the community.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="8a" />
+                    <label for="8a">All residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="8s" />
+                    <label for="8s">Some residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="8n" />
+                    <label for="8n">No residents</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    9. Residents in this village know how to avoid debt bondage.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="9a" />
+                    <label for="9a">All residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="9s" />
+                    <label for="9s">Some residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="9n" />
+                    <label for="9n">No residents</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    10. Residents understand the risks of early or forced marriage and false offers of marriage.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="10a" />
+                    <label for="10a">All residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="10s" />
+                    <label for="10s">Some residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="10n" />
+                    <label for="10n">No residents</label>
+                  </div>
+                </div> 
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    11. Residents understand the risks of early or forced marriage and false offers of marriage.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="11a" />
+                    <label for="11a">All residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="11s" />
+                    <label for="11s">Some residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="11n" />
+                    <label for="11n">No residents</label>
+                  </div>
+                </div> 
+                
+                <div class="row">
+                  <div class="input-field col s6 m6 l6">
+                    12. Residents are able to confront domestic violence.
+                  </div>
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="12a" />
+                    <label for="12a">All residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="12s" />
+                    <label for="12s">Some residents</label>
+                  </div>
+                  
+                  <div class="input-field col s2 m2 l2">
+                    <input type="checkbox" id="12n" />
+                    <label for="12n">No residents</label>
+                  </div>
+                </div> 
+                
+              </form>
+            </div>
+          </div>
+</div>
+
+<script type="text/javascript">
+  
+    $( document ).ready(function(){
+      //Navigation
+      $(".button-collapse").sideNav();
+
+      //Date Picker
+       $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+      });
+    })
+</script>
