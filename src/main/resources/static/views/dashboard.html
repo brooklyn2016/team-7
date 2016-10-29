@@ -1,25 +1,19 @@
 <div class="dashboard" ng-controller="dashboardcontroller">
-  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <div class="row">
     <div class="col s12 m4 l4">
       <div class="card">
         <div class="card-content">
           <span class="card-title">Communities</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+
         </div>
         <div class="card-action"> 
           <div class="input-field col s12">
-            <select>
-              <option value="" disabled selected>Choose one or add a new one: </option>
-              <option value="1" id="getoption">Option 1</option>
-              <option value="2">Option 2</option>
-            </select>
-            <label>Communities</label>
+            <input id="search" aria-label= "Search Bar" type="text" placeholder="Search" autofocus />
           </div>
-          <a class="waves-effect waves-light btn-small white black-text"><i class="material-icons left">search</i>Search</a>
-          <button data-target="addcomm" class="btn modal-trigger red"><i class="material-icons right">add</i>Add</button>
-<!--          <a class="waves-effect waves-light btn-small white black-text right" href="addcomm" class="btn modal-trigger"><i class="material-icons right">add</i>add</a>-->
+          <button class="btn red"><i class="material-icons right" ng-click="showcomponents()">search</i>Search</button>
+          <button data-target="addcomm" class="btn modal-trigger red" onclick="closemodal()"><i class="material-icons right">add</i>Add</button>
+
           <div id="addcomm" class="modal">
             <div class="modal-content">
               <h4>Add a community: </h4>
@@ -28,13 +22,13 @@
                   <div class="input-field col s4 m4 l4">
                     <input type="text" id="commname" />
                     <label for="commname">Community Name: </label>
-                    <p id="namecheck"></p>
+                    <p id="namecheck" class="red-text"></p>
                   </div>
                   
                   <div class="input-field col s4 m4 l4">
                     <input type="text" id="commcountry" />
                     <label for="commcountry">Community Country: </label>
-                    <p id="countrycheck"></p>
+                    <p id="countrycheck" class="red-text"></p>
                   </div>
                   
                   <div class="input-field col s4 m4 l4">
@@ -46,50 +40,60 @@
               
    
             </div>
+       
             <div class="modal-footer">
-              <button class="btn red" ng-click="addcomm()"><i class="material-icons right">add</i>Add</button>
+              
+              <button class="btn red" ng-click="addcomm()" ><i class="material-icons right">add</i>Add</button>
             </div>
           </div>
         </div>
       </div>
     </div>
     
-    <div class="col s12 m4 l4">
+    <div class="col s12 m4 l4" id="stats">
       <div class="card">
         <div class="card-content">
           <span class="card-title">Statistics</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
         </div>
         <div class="card-action">
           
-          <a class="waves-effect waves-light btn-small white black-text"><i class="material-icons left">search</i>Update</a>
-          <a class="waves-effect waves-light btn-small white black-text right"><i class="material-icons right">add</i>add</a>
+          <button class="btn red"><i class="material-icons right" ng-click="showpie()">search</i>Select</button>
+          <button data-target="addcomm" class="btn modal-trigger red"><i class="material-icons right">add</i>Add</button>
+          
 
         </div>
       </div>
     </div>
     
-    <div class="col s12 m4 l4">
+    <div class="col s12 m4 l4" id="survey">
       <div class="card">
         <div class="card-content">
           <span class="card-title">Survey</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
         </div>
         <div class="card-action">
+          
+          <button class="btn red"><i class="material-icons right">search</i>Select</button>
+          <button data-target="addcomm" class="btn modal-trigger red"><i class="material-icons right">add</i>Add</button>
+<!--
           <a class="waves-effect waves-light btn-small white black-text"><i class="material-icons left">search</i>Search</a>
           <a class="waves-effect waves-light btn-small white black-text right"><i class="material-icons right">add</i>add</a>
+-->
         </div>
       </div>
     </div>
   </div>
   
   <!--  Search bar-->
+<!--
   <div class="row">
     <div class="input-field col s12 m10 l8 offset-l2 offset-m1">
     <input id="search" aria-label= "Search Bar" type="text" placeholder="Search" autofocus/>          
     </div>
+  </div>
+-->
+  
+  <div class="Stats" id="pie_div">
+  
   </div>
   
   <div class="Organizations">
@@ -142,5 +146,10 @@
       $('select').material_select();
       $('.modal-trigger').leanModal();
 
-    })
+    });
+  
+ 
+
+  
+  
 </script>

@@ -162,3 +162,11 @@ table {
   fill: black;
   text-anchor: middle;
 }
+
+#stats {
+  display: none;
+}
+
+#survey {
+  display: none;
+}

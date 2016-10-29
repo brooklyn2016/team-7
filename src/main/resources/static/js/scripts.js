@@ -10,8 +10,8 @@ ftsapp.config(['$routeProvider', '$httpProvider', function($routeProvider, $http
     $routeProvider // route for the home page
 
     .when('/', {
-        templateUrl: 'views/home.html',
-        controller: 'homecontroller'
+        templateUrl: 'views/login.html',
+        controller: 'logincontroller'
     })// route for the survey page
     .when('/survey', {
         templateUrl: 'views/survey.html',
