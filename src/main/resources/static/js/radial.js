@@ -62,27 +62,67 @@ var arr = {
 //}
 
 var rp1 = radialProgress(document.getElementById("radial")) 
-	.diameter(200)
-	.value(10)
+	.diameter(160)
+	.value(60)
 	.render();
 
 var rp2 = radialProgress(document.getElementById("radial2")) 
-	.diameter(200)
-	.value(10)
+	.diameter(160)
+	.value(30)
 	.render();
 
 var rp3 = radialProgress(document.getElementById("radial3")) 
-	.diameter(200)
-	.value(10)
+	.diameter(160)
+	.value(06)
 	.render();
 
 var rp4 = radialProgress(document.getElementById("radial4")) 
-	.diameter(200)
+	.diameter(160)
+	.value(20)
+	.render();
+
+var rp5 = radialProgress(document.getElementById("radial5")) 
+	.diameter(160)
 	.value(10)
 	.render();
 
+var rp6 = radialProgress(document.getElementById("radial6")) 
+	.diameter(160)
+	.value(27)
+	.render();
+
+var rp7 = radialProgress(document.getElementById("radial7")) 
+	.diameter(160)
+	.value(05)
+	.render();
+
+var rp8 = radialProgress(document.getElementById("radial8")) 
+	.diameter(160)
+	.value(23)
+	.render();
+
+var rp9 = radialProgress(document.getElementById("radial9")) 
+	.diameter(160)
+	.value(10)
+	.render();
+
+var rp10 = radialProgress(document.getElementById("radial10")) 
+	.diameter(160)
+	.value(16)
+	.render();
+
+var rp11 = radialProgress(document.getElementById("radial11")) 
+	.diameter(160)
+	.value(35)
+	.render();
+
+var rp12 = radialProgress(document.getElementById("radial12")) 
+	.diameter(160)
+	.value(19)
+	.render();
+
 function updateRadial(val) {
-	rp1.value("80")
+	rp1.value(val)
 		.render();
 }
 
