@@ -2,7 +2,11 @@
 var ftsapp = angular.module('ftssurvey', ['ngRoute']);
 
 // routes
-ftsapp.config(['$routeProvider', function($routeProvider) {
+ftsapp.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+
+	//Manually appends header to avoid authentication pop up
+	$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+
     $routeProvider // route for the home page
 //    .when('/', {
 //        templateUrl: 'views/home.html',
@@ -19,7 +23,6 @@ ftsapp.config(['$routeProvider', function($routeProvider) {
     .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'logincontroller',
-    
     });
 }
 ]);

@@ -6,28 +6,28 @@
             <span class="card-title center-align">Free the slaves</span>
             <div class="row">
               <form class="col s12 m12 l12">
-                
+
                 <div class="row">
                   <div class="input-field col s12 m12 l12">
-                    <input id="username" type="text" class="validate">
+                    <input id="username" type="text" class="validate" ng-model="credentials.username" >
                     <label for="username">Username</label>
                   </div>
                 </div>
-               
+
                 <div class="row">
-                  <div class="input-field col s12 m12 l12">            
-                    <input id="password" type="password">
+                  <div class="input-field col s12 m12 l12">
+                    <input id="password" type="password" ng-model="credentials.password">
                     <label for="password">Password</label>
                     <p id="pcheck"></p>
                   </div>
                 </div>
-                
-                <a class="waves-effect waves-light btn red" id="signin" ng-click="checkpassword()">SIGN IN</a>
-                
+
+                <a class="waves-effect waves-light btn red" id="signin" ng-click="login()">SIGN IN</a>
+
               </form>
             </div>
           </div>
-        </div>    
+        </div>
       </div>
   </div>
 </div>
