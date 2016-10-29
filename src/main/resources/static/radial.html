@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='css/radial.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <h1>Assessing Success and Sustainability of Slavery Eradication in Communities</h1>
+
+     <div id="orgs-select">
+      <label for="questions">Organizations :  </label>
+      <select class="questions" name="questions" id="org">
+        <option value="org1">Organization 1</option>
+        <option value="org2">Org 2</option>
+        <option value="org3">Org 3</option>
+      </select>
+
+       <button id="filter_go" onclick="filter_selection()">Filter!</button>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div class="radial" id="radial">
+    Radial 1
+    </div>
+
+    <div class="radial" id="radial2">
+    Radial 2
+    </div>
+
+    <div class="radial" id="radial3">
+    Radial 3
+    </div>
+
+    <div class="radial" id="radial4">
+    Radial 4
+    </div>
+
+
+    <!-- External js libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+    <!-- Our js files -->
+    <script src="js/radialProgressLibrary.js"></script>
+    <script src="js/radial.js"></script>
+
+  </body>
+</html>

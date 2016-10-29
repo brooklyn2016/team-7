@@ -1,0 +1,20 @@
+{
+    "org1": {
+        "radial": "90",
+        "radial2": "20",
+        "radial3": "30",
+        "radial4": "70"
+    },
+    "org2": {
+        "radial": "12",
+        "radial2": "70",
+        "radial3": "15",
+        "radial4": "96"
+    },
+    "org3": {
+        "radial": "10",
+        "radial2": "100",
+        "radial3": "12",
+        "radial4": "43"
+    }
+}
