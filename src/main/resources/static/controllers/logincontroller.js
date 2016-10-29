@@ -1,4 +1,4 @@
-angular.module('ftssurvey').controller('logincontroller', ['$scope','$rootScope', '$http', function ($scope, $rootScope, $http) {
+angular.module('ftssurvey').controller('logincontroller', ['$scope','$rootScope', '$http','$window', function ($scope, $rootScope, $http, $window) {
 
 
 	$rootScope.principal = {};
@@ -7,26 +7,28 @@ angular.module('ftssurvey').controller('logincontroller', ['$scope','$rootScope'
 
 	$scope.login = function() {
 		//Headers for Basic Auth
-		console.log($scope.credentials.username, $scope.credentials.password);
+        
+      $scope.checkpassword();
+      
+      
 		var headers = $scope.credentials ? {authorization : 'Basic ' + btoa($scope.credentials.username + ':' + $scope.credentials.password)} : {};
-
-		console.log(headers);
 
 		$http
 			.get('./user', {headers: headers})
 			.then(function success(response) {
 				//If promise is successful checks if login was successful
 				if (response.data.username) {
-					console.log('Login success : ' , response.data.username);
+                    console.log("It's working!");
 					$rootScope.principal = response.data;
+                  //redirect at this point
+                  $window.location.href = '/#/dashboard';
+                  
 				} else {
-				console.log('Login failed');
 					$rootScope.principal = {};
 				}
 			}, function failure(response) {
-				console.log('Login failed:');
-				console.log(response.statusText);
-				principal = {};
+				principal = {}; 
+                console.log("It failed!")
 			});
 	};
 
