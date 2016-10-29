@@ -18,6 +18,7 @@ public class WebContext {
     private final User user;
 
     public WebContext(){
+        //Users security context holder to get current logged in user
         user = (User) SecurityContextHolder.getContext().
                 getAuthentication().getPrincipal();
     }
