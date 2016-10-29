@@ -24,6 +24,14 @@ public class StatValTuple {
     @JsonProperty("stat-id")
     protected Long stat_id;
 
+    public StatValTuple() {
+    }
+
+    public StatValTuple(String stat, double val) {
+        this.stat = stat;
+        this.val = val;
+    }
+
     public String getStat() {
         return stat;
     }

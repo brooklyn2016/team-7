@@ -53,6 +53,10 @@ public class Statistics implements Comparable<Statistics> {
         return statVals;
     }
 
+    public void setStatVals(List<StatValTuple> statVals) {
+        this.statVals = statVals;
+    }
+
     public Long getPk_statistics() {
         return pk_statistics;
     }
@@ -94,5 +98,17 @@ public class Statistics implements Comparable<Statistics> {
     @Override
     public int compareTo(Statistics statistics) {
         return yearQuarter - statistics.getYearQuarter();
+    }
+
+    @Override
+    public String toString() {
+        return "Statistics{" +
+                "pk_statistics=" + pk_statistics +
+                ", year=" + year +
+                ", quarter=" + quarter +
+                ", c_id=" + c_id +
+                ", statVals=" + statVals +
+                ", yearQuarter=" + yearQuarter +
+                '}';
     }
 }

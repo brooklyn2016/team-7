@@ -1,15 +1,16 @@
 package com.team7;
 
-import com.team7.model.Community;
-import com.team7.model.Question;
-import com.team7.model.Survey;
-import com.team7.model.SurveyQuestionAnswer;
+import com.team7.model.*;
 import com.team7.repository.CommunityRepository;
 import com.team7.repository.QuestionRepository;
+import com.team7.repository.StatisticsRepository;
 import com.team7.repository.SurveyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.TreeSet;
 
 import javax.annotation.PostConstruct;
@@ -28,14 +29,17 @@ public class SeedDatabase {
     @Autowired
     SurveyRepository surveyRepository;
 
+    @Autowired
+    StatisticsRepository statisticsRepository;
+
     @PostConstruct
     public void seedCommunities(){
         communityRepository.save(new Community("Hydrabad", "India", "Village A"));
         communityRepository.save(new Community("Hydrabad", "India", "Village B"));
-        communityRepository.save(new Community("Hydrabad", "Ghana", "Village C"));
-        communityRepository.save(new Community("Hydrabad", "India", "Village D"));
-        communityRepository.save(new Community("Hydrabad", "India", "Village E"));
-        communityRepository.save(new Community("Hydrabad", "India", "Village F"));
+        communityRepository.save(new Community("Central", "Ghana", "Village C"));
+        communityRepository.save(new Community("Ashanti", "Ghana", "Village D"));
+        communityRepository.save(new Community("", "Haiti", "Village E"));
+        communityRepository.save(new Community("", "Haiti", "Village F"));
 
         for(Community community : communityRepository.findAll()){
             System.out.println("Community " + community);
@@ -43,6 +47,7 @@ public class SeedDatabase {
 
         seedQuestions();
         seedSurveys();
+        seedStatistics();
     }
 
     public void seedQuestions(){
@@ -75,6 +80,34 @@ public class SeedDatabase {
 
         for (Survey survey : surveyRepository.findAll()) {
             System.out.println("Survey " + survey);
+        }
+    }
+
+    public void seedStatistics(){
+        List<StatValTuple> list = new ArrayList<StatValTuple>();
+
+        list.add(new StatValTuple("Slaves freed", 125));
+        list.add(new StatValTuple("Communities receiving support", 30));
+        list.add(new StatValTuple("Community Members educated on rights and risks", 500));
+        list.add(new StatValTuple("Communities that have reached full maturity", 200));
+        list.add(new StatValTuple("Slaves effectively re-intergrated", 20));
+
+        System.out.println(list);
+
+        Statistics stats1 = statisticsRepository.save(new Statistics(2016, 1, 1L));
+        Statistics stats2 = statisticsRepository.save(new Statistics(2016, 1, 3L));
+        Statistics stats3 = statisticsRepository.save(new Statistics(2016, 1, 5L));
+
+        stats1.setStatVals(list);
+        stats2.setStatVals(list);
+        stats3.setStatVals(list);
+
+        statisticsRepository.save(stats1);
+        statisticsRepository.save(stats2);
+        statisticsRepository.save(stats3);
+
+        for(Statistics statistics: statisticsRepository.findAll()){
+            System.out.println("Statistics" + statistics);
         }
     }
 
