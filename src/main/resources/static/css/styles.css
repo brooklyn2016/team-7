@@ -1,3 +1,67 @@
 html {
  font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
+
+#pcheck {
+  color: red;
+}
+
+/*Table*/
+
+td {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+
+th {
+  
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    .downarrow {
+        display: none;
+    }
+
+    .line {
+        display: none;
+    }
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        border-collapse: collapse;
+        text-align: center;
+    }
+}
+#submitform {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
+
 /**
  * Created by sd95 on 10/28/16.
  */
@@ -21,6 +23,13 @@ public class UserController {
 
     @Autowired
     private WebContext webContext;
+
+    @PostConstruct
+    public void testDatabase(){
+        for (User user : userRepository.findAll()) {
+            System.out.print("USER REPOSITORY:" + user.getFirstName() + "  " + user.getPassword());
+        }
+    }
 
     @RequestMapping(value="/user", method= RequestMethod.GET)
     public ResponseEntity<User> login() {

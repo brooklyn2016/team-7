@@ -12,4 +12,5 @@ import java.util.List;
 @Repository
 public interface SurveyRepository extends PagingAndSortingRepository<Survey, String> {
     List<Survey> findAllBySurveyor(String surveyor);
+    List<Survey> findAllByCId(Long c_id);
 }
