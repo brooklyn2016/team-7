@@ -46,4 +46,23 @@ public class SurveyRepositoryTest {
         long countAfter = StreamSupport.stream(surveyRepository.findAll().spliterator(), false).count();
         assertThat(countAfter).isEqualTo(1);
     }
+
+    @Test
+    public void multipleSurveysCanBeAddedRepository() throws Exception {
+        long count = StreamSupport.stream(surveyRepository.findAll().spliterator(), false).count();
+        assertThat(count).isEqualTo(0);
+
+        Survey survey = new Survey();
+        survey.setDateCreated(new Date());
+        survey.setSurveyor("New name");
+        surveyRepository.save(survey);
+
+        Survey survey2 = new Survey();
+        survey2.setDateCreated(new Date());
+        survey2.setSurveyor("New name2");
+        surveyRepository.save(survey2);
+
+        long countAfter = StreamSupport.stream(surveyRepository.findAll().spliterator(), false).count();
+        assertThat(countAfter).isEqualTo(2);
+    }
 }
