@@ -13,7 +13,6 @@ public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
     @JsonProperty("pk_question")
     protected Long pk_question;
 
@@ -21,7 +20,10 @@ public class Question {
     @JsonProperty("text")
     protected String text;
 
-    public Question() {
+    public Question() {}
+
+    public Question(String text) {
+        this.text = text;
     }
 
     public Long getPkQuestion() {
@@ -43,14 +45,15 @@ public class Question {
 
         Question question = (Question) o;
 
-        if (!pk_question.equals(question.pk_question)) return false;
+        if (pk_question != null ? !pk_question.equals(question.pk_question) : question.pk_question != null)
+            return false;
         return text.equals(question.text);
 
     }
 
     @Override
     public int hashCode() {
-        int result = pk_question.hashCode();
+        int result = pk_question != null ? pk_question.hashCode() : 0;
         result = 31 * result + text.hashCode();
         return result;
     }

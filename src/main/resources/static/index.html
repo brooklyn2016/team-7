@@ -57,6 +57,9 @@
     <!--Materialize-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     
+<!--  <D3 - radial-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    
    
     
     <script type="text/javascript" src="js/scripts.js"></script>
@@ -64,10 +67,15 @@
     <script type="text/javascript" src="controllers/surveycontroller.js"></script>
     <script type="text/javascript" src="controllers/logincontroller.js"></script>
     <script type="text/javascript" src="controllers/dashboardcontroller.js"></script>
+    
+    <script type="text/javascript" src="js/radialProgressLibrary.js"></script>
+    <script type="text/javascript" src="js/radial.js"></script>
      <script type="text/javascript">
   
       $( document ).ready(function(){
          $(".button-collapse").sideNav();
+        
+        $('select').material_select();
       });
       
       function hidenav()
